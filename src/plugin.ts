@@ -86,3 +86,12 @@ export class PluginManager {
     await scriptLoaded;
   };
 }
+
+export const registerPlugin = (plugin: IPluginActions<any, any, any>) => {
+  const _plugin: IPlugin<any, any, any> = {
+    ...require("./plugin.json"),
+    ...plugin,
+  };
+
+  (window as any)["plugins"][_plugin.id] = _plugin;
+};
