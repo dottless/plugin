@@ -1,17 +1,17 @@
 {
-  "name": "@bujupah/plugin",
+  "name": "@dottless/plugin",
   "version": "1.0.0",
   "author": "Khalil Mejdi <khalil.mejdi97@gmail.com>",
   "description": "Interfaces for @bujupah/plugin",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bujupah/flowless.git"
+    "url": "git+https://github.com/dottless/flowless.git"
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bujupah/flowless"
+    "url": "https://github.com/dottless/flowless"
   },
-  "homepage": "https://github.com/Bujupah/flowless#readme",
+  "homepage": "https://github.com/dottless/flowless#readme",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
