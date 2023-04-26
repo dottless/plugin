@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "Khalil Mejdi <khalil.mejdi97@gmail.com>",
   "description": "Interfaces for @bujupah/plugin",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dottless/flowless.git"
@@ -15,5 +16,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.16.1"
   }
 }
