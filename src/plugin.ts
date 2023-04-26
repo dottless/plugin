@@ -1,3 +1,5 @@
+import logger from "./logger";
+
 export interface IPluginActions<L, R, P> {
   load(): L;
   read(event: string, data: any): R;
@@ -87,16 +89,18 @@ export class PluginManager {
   };
 }
 
-export const meta: IPlugin<any, any, any> = require("./plugin.json");
-
-export const registerPlugin = (plugin: IPluginActions<any, any, any>) => {
+export const registerPlugin = (plugin: IPlugin<any, any, any>) => {
   const _plugin: IPlugin<any, any, any> = {
-    id: meta.id,
-    name: meta.name,
-    version: meta.version,
-    description: meta.description,
     ...plugin,
   };
-
-  (window as any)["plugins"][_plugin.id] = _plugin;
+  (window as any)["plugins"][_plugin.id] = {
+    _plugin,
+    logger: {
+      log: (...messages: any[]) => logger.log(_plugin.id, ...messages),
+      debug: (...messages: any[]) => logger.debug(_plugin.id, ...messages),
+      error: (...messages: any[]) => logger.error(_plugin.id, ...messages),
+      info: (...messages: any[]) => logger.info(_plugin.id, ...messages),
+      warn: (...messages: any[]) => logger.warn(_plugin.id, ...messages),
+    },
+  };
 };
