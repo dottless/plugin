@@ -18,4 +18,4 @@ const warn = (pluginID?: any, ...optionalParams: any[]) => {
   console.warn(`[${pluginID}]`, ...optionalParams);
 };
 
-export default { log, debug, error, info, warn };
+export const logger = { log, debug, error, info, warn };
