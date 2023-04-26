@@ -87,9 +87,14 @@ export class PluginManager {
   };
 }
 
+export const meta: IPlugin<any, any, any> = require("./plugin.json");
+
 export const registerPlugin = (plugin: IPluginActions<any, any, any>) => {
   const _plugin: IPlugin<any, any, any> = {
-    ...require("./plugin.json"),
+    id: meta.id,
+    name: meta.name,
+    version: meta.version,
+    description: meta.description,
     ...plugin,
   };
 
